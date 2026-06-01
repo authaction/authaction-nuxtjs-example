@@ -1,0 +1,16 @@
+{
+  "name": "authaction-nuxtjs-example",
+  "version": "1.0.0",
+  "description": "Nuxt.js application with AuthAction OAuth2 authentication",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@sidebase/nuxt-auth": "^0.9.4",
+    "next-auth": "^4.24.0",
+    "nuxt": "^3.13.0"
+  }
+}
