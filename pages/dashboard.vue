@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'auth' })
 
-const { data: session, signOut } = useAuth()
+const { data: session } = await useFetch('/api/auth/session');
 </script>
 
 <template>
@@ -9,6 +9,6 @@ const { data: session, signOut } = useAuth()
     <h1>Dashboard</h1>
     <p>Welcome, {{ session?.user?.name }}!</p>
     <p>Email: {{ session?.user?.email }}</p>
-    <button @click="signOut({ callbackUrl: '/' })">Logout</button>
+    <a href="/api/auth/logout">Logout</a>
   </div>
 </template>

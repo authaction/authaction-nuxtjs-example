@@ -1,7 +1,7 @@
-export default defineNuxtRouteMiddleware(() => {
-  const { status } = useAuth()
+export default defineNuxtRouteMiddleware(async () => {
+  const { data: session } = await useFetch('/api/auth/session');
 
-  if (status.value === 'unauthenticated') {
-    return navigateTo('/login')
+  if (!session.value) {
+    return navigateTo('/api/auth/login');
   }
-})
+});

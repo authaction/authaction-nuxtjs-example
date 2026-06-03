@@ -1,17 +1,17 @@
 <script setup lang="ts">
-const { data: session, status, signIn, signOut } = useAuth()
+const { data: session } = await useFetch('/api/auth/session');
 </script>
 
 <template>
   <div>
-    <div v-if="status === 'authenticated'">
-      <h1>Welcome, {{ session?.user?.name }}!</h1>
-      <p>Email: {{ session?.user?.email }}</p>
-      <button @click="signOut({ callbackUrl: '/' })">Logout</button>
+    <div v-if="session">
+      <h1>Welcome, {{ session.user?.name }}!</h1>
+      <p>Email: {{ session.user?.email }}</p>
+      <a href="/api/auth/logout">Logout</a>
     </div>
     <div v-else>
       <h1>AuthAction Nuxt.js Example</h1>
-      <button @click="signIn('authaction')">Login with AuthAction</button>
+      <a href="/api/auth/login">Login with AuthAction</a>
     </div>
   </div>
 </template>

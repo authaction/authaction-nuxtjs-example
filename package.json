@@ -9,8 +9,7 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@sidebase/nuxt-auth": "^0.9.4",
-    "next-auth": "^4.24.0",
+    "@authaction/server-sdk": "file:../authaction-server-sdk",
     "nuxt": "^3.13.0"
   }
 }
